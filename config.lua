@@ -91,4 +91,4 @@ config.main.logtime = 5
 config.main.device = 1
 config.main.dropout = true
 config.main.debug = false
-config.main.test = false
+config.main.test = true
