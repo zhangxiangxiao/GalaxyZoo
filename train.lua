@@ -105,7 +105,7 @@ function Train:batchStep()
    self.clock = sys.clock()
    -- Update the step
    self.old_grads:mul(self.momentum):add(self.grads:mul(-self.rate))
-   self.params:mul(1-self.decay):add(self.old_grads)
+   self.params:mul(1-self.decay*self.rate):add(self.old_grads)
    if self.model:type() == "torch.CudaTensor" then cutorch.synchronize() end
    self.time.update = sys.clock() - self.clock
    
